@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap");
+
+@font-face {
+  font-family: "raleway";
+  font-style: normal;
+  font-weight: 100;
+
+  src: url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap")
+    format("ttf");
+}
+@font-face {
+  font-family: "segoe";
+  font-style: normal;
+  font-weight: 600;
+
+  src: url("/src/Fonts/Segoe\ UI\ Bold.ttf") format("ttf");
+}
+@layer utilities {
+  @keyframes circle {
+    0% {
+      transform: rotate(2deg) translateX(50px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+  }
+  @keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(-20px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+
+  @keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translatex(-100px);
+    }
+    80% {
+      transform: translatex(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+}
+.tag-cloud {
+  will-change: transform, opacity, filter;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 8;
+  opacity: 0.571;
+  transform-origin: 50% 50%;
+  transform: translate3d(-156.37px, -135.56px, 0px) scale(0.906);
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(calc(100% - 100vw));
+  }
+}
+
+.animate-marquee {
+  animation: marquee 5s linear infinite;
+}
+.opacity-0 {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.opacity-100 {
+  opacity: 1;
+  visibility: visible;
+}
+.loading-screen {
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.fade-enter {
+  opacity: 1;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+.slide-right {
+  animation: slide-right 2s forwards;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.slide-left {
+  animation: slide-left 2s forwards;
+}
+.slide.down {
+  animation: slide-down 2s forwards;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+.nav-item .underline {
+  display: block;
+  width: 0;
+  height: 4px; /* Ajusta esto para cambiar el grosor de la barra */
+  background: #fed7aa;
+  border-radius: 10px;
+  transition: width 0.3s ease-in-out;
+}
+
+a:hover .nav-item:hover .underline {
+  width: 100%;
+}
+
+.about-section {
+  position: relative !important;
+  padding-top: 150px !important;
+  padding-bottom: 30px !important;
+  background-image: var(--section-background-color) !important;
+  color: white !important;
+}
+
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 3.5em !important;
+  padding: 5px !important;
+  opacity: 0.93 !important;
+  border: 2px solid #fed7aa !important;
+  border-radius: 8px !important;
+  box-shadow: 4px 8px 4px 3px rgba(89, 4, 168, 0.137) !important;
+  transition: all 0.4s ease 0s !important;
+}
+
+@media (max-width: 767px) {
+  .tech-icons {
+    margin: 10px !important;
+  }
+}
+
+.tech-icons:hover {
+  transform: scale(1.05) !important;
+  overflow: hidden !important;
+  border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
+}
+.tech-icon-images {
+  padding: 20px !important;
+  line-height: 1.6 !important;
+}
+
+.quote-card-view {
+  border: none !important;
+  color: white !important;
+  background-color: transparent !important;
+}
+
+.about-activity {
+  list-style: none !important;
+  text-align: left !important;
+  padding-left: 1px !important;
+}
+
+@media (max-width: 767px) {
+  .about-img {
+    padding-top: 0 !important;
+  }
+}
